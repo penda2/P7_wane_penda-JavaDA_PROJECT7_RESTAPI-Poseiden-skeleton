@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Access Denied Exception</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+	<div class="container">
+		<h3>You are not authorized for the requested data.</h3>
+		<div>
+			<p>Logged in user: <span th:inline="text" class="user" th:text="${username}"></span></p>
+			<form th:action="@{/logout}" method="POST">
+				<input type="submit" class="btn btn-danger btn-sm" value="Logout" />
+				<p class="error" th:text="${errorMsg}">Error</p>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
